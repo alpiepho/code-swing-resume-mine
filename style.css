@@ -12,6 +12,10 @@ h1 {
     padding-bottom: 1em;
 }
 
+h1 b {
+    letter-spacing: .3em;
+}
+
 h2 {
     font-size: 1.5em;
     padding-bottom: 1em;
@@ -19,7 +23,7 @@ h2 {
 
 main { 
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 20% 80%;
     margin-top: 3em;
 }
 
