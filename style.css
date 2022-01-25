@@ -57,4 +57,106 @@ h1, h2 {
 
 #mainLeft {
     border-right: 1px solid lightgray;
- }
+}
+
+.print_qr_message {
+    display: none;
+}
+
+.print_qr {
+    display: none;
+}
+
+.qr {
+    margin: auto;
+}
+
+/* for Menu buttons */
+.menu-option-button {
+    margin: 2px;
+}
+
+/* for Dark mode button */
+:root {
+    --background-color: white;
+    --color: black;
+}
+body {
+    background-color: var(--background-color);
+    color: var(--color);
+}
+
+/* for Starwars */
+@keyframes starwars_web {
+    0% {
+      transform:	perspective(1600px) rotateX(50deg) translateY(1000px);
+      transform-origin:	center center 0px;
+    }
+    95% {
+      transform:	perspective(1600px) rotateX(50deg) translateY(-1500px);
+      transform-origin:	center center 0px;
+    }
+    100% {
+      transform:	none;
+    }
+}
+  
+  @keyframes starwars_mobile {
+    0% {
+      transform:	perspective(1600px) rotateX(50deg) translateY(1000px) ;
+      transform-origin:	center center 0px;
+    }
+    95% {
+      transform:	perspective(1600px) rotateX(50deg) translateY(-4000px) ;
+      transform-origin:	center center 0px;
+    }
+    100% {
+      transform:	none;
+    }
+  }
+  
+  .starwars {
+    height: 500px;
+    animation: starwars_web;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+  }
+  
+  @media only screen and (max-width: 400px) {
+    .starwars {
+      height: 500px;
+      /* width: 110%; */
+      animation: starwars_mobile;
+      animation-duration: 10s;
+      animation-timing-function: linear;
+    }
+  }
+  
+@media print {
+    /* remove any screen only styles, for example link underline */
+    a {
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    /* fix grid so contacts dont wrap */
+    main { 
+        grid-template-columns: 27% 73%;
+    }
+
+    .print_qr_message {
+      display: block;
+    }
+  
+    .print_qr {
+        display: block;
+        transform: scale(0.8);
+        white-space: nowrap;
+        margin-top: -50px;
+        margin-left: -50px;
+    }
+
+    .menu-option-button {
+        display: none;
+    }
+  }

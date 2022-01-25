@@ -6,9 +6,45 @@
     <link rel="icon" 
       type="image/png" 
       href="./favicon.ico" />
+
+
+			<script>
+				function toggleDark() {
+					const root = document.documentElement;
+					if (root.style.getPropertyValue('--background-color') == '' || root.style.getPropertyValue('--background-color') == 'white') {
+						root.style.setProperty('--background-color', '#111111')
+						root.style.setProperty('--color', '#aaaaaa')
+					}
+					else {
+						root.style.setProperty('--background-color', 'white')
+						root.style.setProperty('--color', 'black')
+					}
+					document.querySelector('.menu-button').click()
+				}
+				function showQr() {
+					window.open( 
+								"./qr.html", "_self");
+				}
+				function showFun() {
+					window.open( 
+								"./fun.html", "_self");
+				}
+				function showLinks() {
+					window.open( 
+								"./credits.html", "_self");
+				}
+				function showStarwars() {
+					var element = document.getElementById("body");
+					if (element.classList.contains("starwars"))
+						element.classList.remove("starwars");
+					else
+						element.classList.add("starwars");
+				}
+			</script>
+	
 	</head>
 
-	<body>
+	<body id="body">
 		<header id="header">
 			<!-- resume header with your name and title -->
 			<h1><b>AL</b> PIEPHO</h1>
@@ -107,6 +143,26 @@
 											Co-Author on 6 U.S. Patents, (see LinkedIn page for full details)
                     </p>
 				</section>            
+
+				<section>
+						<button class="menu-option-button" onclick="toggleDark()">
+							Dark
+						</button>
+						<button class="menu-option-button" onclick="showQr()">
+							QR
+						</button>
+						<button class="menu-option-button" onclick="showFun()">
+							Fun
+						</button>
+						<button class="menu-option-button" onclick="showLinks()">
+							Links
+						</button>
+						<button class="menu-option-button" onclick="showStarwars()">
+							Starwars
+						</button>		
+				</section>
+
+
 			</article>
 			<article id="mainRight">
 				<section>
@@ -201,7 +257,12 @@
 										</ul>
 
 						</section>
-			</article>
+
+						<section class="print_qr_message">&nbsp;&nbsp;Scan for an interactive version:</section>
+						<section class="print_qr">
+							<img class="qr" src="./icons/qr.png"></img>
+						</section>
+							</article>
 		</main>
-	</body>
+</body>
 </html>
