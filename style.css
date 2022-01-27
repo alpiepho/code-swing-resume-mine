@@ -77,8 +77,11 @@ h1, h2 {
 
 
 /* for Menu buttons */
-.menu-option-button {
+.menu_button {
     margin: 2px;
+    height: 30px;
+    width: 100px;
+    font-size: 15px;
 }
 
 /* for Dark mode button */
@@ -128,13 +131,20 @@ animation-timing-function: linear;
 }
 
 @media only screen and (max-width: 400px) {
-.starwars {
-    height: 500px;
-    /* width: 110%; */
-    animation: starwars_mobile;
-    animation-duration: 10s;
-    animation-timing-function: linear;
-}
+    .menu_button {
+        margin: 2px;
+        height: 40px;
+        width: 100px;
+        font-size: 20px;
+    }
+
+    .starwars {
+        height: 500px;
+        /* width: 110%; */
+        animation: starwars_mobile;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+    }
 }
 
 /* for Showing QR */
@@ -182,7 +192,7 @@ animation-timing-function: linear;
         display: block;
     }
     
-    .menu-option-button {
+    .menu_button {
         display: none;
     }
 
