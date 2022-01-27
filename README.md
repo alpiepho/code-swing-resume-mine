@@ -17,5 +17,6 @@ The tutorial was well done, and featured a package, "Code Swing", to help with t
 
 ## TODO
 - style buttons
+- better way to disable starwars
 - add some color
 - add some annimation

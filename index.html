@@ -9,6 +9,20 @@
 
 
 			<script>
+				function toggleMenu() {
+					var element = document.getElementById("show_menu");
+					if (element.classList.contains("show_menu_on")) {
+						element.classList.remove("show_menu_on");
+						element.classList.add("show_menu_off");
+					}
+					else {
+						element.classList.remove("show_menu_off");
+						element.classList.add("show_menu_on");
+					}
+					element = document.getElementById("body");
+					if (element.classList.contains("starwars"))
+						element.classList.remove("starwars");
+				}
 				function toggleDark() {
 					const root = document.documentElement;
 					if (root.style.getPropertyValue('--background-color') == '' || root.style.getPropertyValue('--background-color') == 'white') {
@@ -71,21 +85,26 @@
 
 				<!-- Buttons for interactive features -->
 				<section>
-					<button class="menu_button" onclick="toggleDark()">
-						Dark
+					<button class="menu_button" onclick="toggleMenu()">
+						Menu
 					</button>
-					<button class="menu_button" onclick="toggleQr()">
-						QR
-					</button>
-					<button class="menu_button" onclick="showFun()">
-						Fun
-					</button>
-					<button class="menu_button" onclick="toggleLinks()">
-						Links
-					</button>
-					<button class="menu_button" onclick="showStarwars()">
-						Starwars
-					</button>		
+					<div id="show_menu" class="show_menu_off">
+						<button class="menu_button" onclick="toggleDark()">
+							Dark
+						</button>
+						<button class="menu_button" onclick="toggleQr()">
+							QR
+						</button>
+						<button class="menu_button" onclick="showFun()">
+							Fun
+						</button>
+						<button class="menu_button" onclick="toggleLinks()">
+							Links
+						</button>
+						<button class="menu_button" onclick="showStarwars()">
+							Starwars
+						</button>
+					</div>	
 			</section>
 
 			<section>

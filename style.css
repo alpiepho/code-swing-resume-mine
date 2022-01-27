@@ -78,11 +78,18 @@ h1, h2 {
 
 /* for Menu buttons */
 .menu_button {
-    margin: 2px;
-    height: 30px;
-    width: 100px;
+    margin: 4px;
+    height: 35px;
+    width: 150px;
     font-size: 15px;
-    border-radius: 20px;
+    border-radius: 0px;
+    color: black;
+}
+.show_menu_off {
+    display: none;
+}
+.show_menu_on {
+    display: block;
 }
 
 /* for Dark mode button */
@@ -132,13 +139,6 @@ animation-timing-function: linear;
 }
 
 @media only screen and (max-width: 600px) {
-    .menu_button {
-        margin: 4px;
-        height: 60px;
-        width: 200px;
-        font-size: 30px;
-    }
-
     .starwars {
         height: 500px;
         /* width: 110%; */
@@ -197,6 +197,10 @@ animation-timing-function: linear;
         display: none;
     }
 
+    .show_menu_on {
+        display: none;
+    }
+
     .show_qr_on {
         display: none;
     }
@@ -204,5 +208,11 @@ animation-timing-function: linear;
     .show_links_on {
         display: none;
     }
-    
+
+    .starwars {
+        height: 500px;
+        /* width: 110%; */
+        animation: none;
+    }
+
   }
