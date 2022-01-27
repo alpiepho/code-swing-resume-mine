@@ -21,17 +21,31 @@
 					}
 					document.querySelector('.menu-button').click()
 				}
-				function showQr() {
-					window.open( 
-								"./qr.html", "_self");
+				function toggleQr() {
+					var element = document.getElementById("show_qr");
+					if (element.classList.contains("show_qr_on")) {
+						element.classList.remove("show_qr_on");
+						element.classList.add("show_qr_off");
+					}
+					else {
+						element.classList.remove("show_qr_off");
+						element.classList.add("show_qr_on");
+					}
 				}
 				function showFun() {
 					window.open( 
 								"./fun.html", "_self");
 				}
-				function showLinks() {
-					window.open( 
-								"./credits.html", "_self");
+				function toggleLinks() {
+					var element = document.getElementById("show_links");
+					if (element.classList.contains("show_links_on")) {
+						element.classList.remove("show_links_on");
+						element.classList.add("show_links_off");
+					}
+					else {
+						element.classList.remove("show_links_off");
+						element.classList.add("show_links_on");
+					}
 				}
 				function showStarwars() {
 					var element = document.getElementById("body");
@@ -55,6 +69,24 @@
 		<main>
 			<article id="mainLeft">
 				<section>
+					<button class="menu-option-button" onclick="toggleDark()">
+						Dark
+					</button>
+					<button class="menu-option-button" onclick="toggleQr()">
+						QR
+					</button>
+					<button class="menu-option-button" onclick="showFun()">
+						Fun
+					</button>
+					<button class="menu-option-button" onclick="toggleLinks()">
+						Links
+					</button>
+					<button class="menu-option-button" onclick="showStarwars()">
+						Starwars
+					</button>		
+			</section>
+
+			<section>
 					<h2>CONTACT</h2>
 					<!-- contact info including social media -->
                     <p>
@@ -144,27 +176,67 @@
                     </p>
 				</section>            
 
-				<section>
-						<button class="menu-option-button" onclick="toggleDark()">
-							Dark
-						</button>
-						<button class="menu-option-button" onclick="showQr()">
-							QR
-						</button>
-						<button class="menu-option-button" onclick="showFun()">
-							Fun
-						</button>
-						<button class="menu-option-button" onclick="showLinks()">
-							Links
-						</button>
-						<button class="menu-option-button" onclick="showStarwars()">
-							Starwars
-						</button>		
-				</section>
-
-
 			</article>
 			<article id="mainRight">
+
+				<section id="show_links" class="show_links_off">
+          <h3>
+            ADDITONAL LINKS:
+					</h3>
+          <ul>
+            <li>
+              <a href="https://github.com/alpiepho/css-grid-resume-mine/"
+                target="_blank"
+                rel="noreferrer">Github repo for this resume
+                </a>
+							</li>
+            <li>
+              <a href="https://codepen.io/sd3x/pen/OJJXdBZ"
+                target="_blank"
+                rel="noreferrer"> CodePen for Whack-a-Mole 
+                </a>(forked from original author)
+							</li>
+            <li>
+              <a href="https://alpiepho.github.io/node-overcast-rss/"
+                target="_blank"
+                rel="noreferrer">Podcast Summary 
+                </a>
+            </li>
+            <li>
+              <a href="https://alpiepho.github.io/pup-learning-aws/"
+                target="_blank"
+                rel="noreferrer">AWS Training Summary
+                </a>
+            </li>
+            <li>
+              <a href="https://alpiepho.github.io/pup-learning/"
+                target="_blank"
+                rel="noreferrer">LinkedIn Learning Summary
+                </a>
+            </li>
+            <li>
+              <a href="https://alpiepho.github.io/pup-lynda/"
+                target="_blank"
+                rel="noreferrer">Lynda.com Learning Summary
+                </a>  (pre LinkedIn)
+            </li>
+            <li>
+              <a href="https://alpiepho.github.io/my-pure-css/"
+                target="_blank"
+                rel="noreferrer">My 50 Day Pure-CSS Challenge Projects</a> 
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/al-piepho-fw-sw-engineer/"
+                target="_blank"
+                rel="noreferrer">Direct to LinkedIn</a>
+            </li>
+          </ul>
+				</section>
+
+				<section id="show_qr" class="show_qr_off">
+					<img class="qr" src="./icons/qr.png"></img>
+				</section>
+
 				<section>
 					<h2>ABOUT</h2>
 					<!-- about you -->
@@ -236,6 +308,11 @@
 														<li>Leading edge prototype IOT system connecting legacy water products to Azure cloud</li>
 														<li>Developed firmware and UI for water analyzers with reliability that exceeds the current products</li>
 										</ul>
+
+										<!-- manually add space to align when printing -->
+										<div class="print_space">
+											<br>
+										</div>
 
                     <h3><b>Schneider-Electric (Pelco) | 2008-2013</b></h3>
 										<p>

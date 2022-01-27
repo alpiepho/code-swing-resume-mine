@@ -71,6 +71,11 @@ h1, h2 {
     margin: auto;
 }
 
+.print_space {
+    display: none;
+}
+
+
 /* for Menu buttons */
 .menu-option-button {
     margin: 2px;
@@ -101,36 +106,53 @@ body {
     }
 }
   
-  @keyframes starwars_mobile {
-    0% {
-      transform:	perspective(1600px) rotateX(50deg) translateY(1000px) ;
-      transform-origin:	center center 0px;
-    }
-    95% {
-      transform:	perspective(1600px) rotateX(50deg) translateY(-4000px) ;
-      transform-origin:	center center 0px;
-    }
-    100% {
-      transform:	none;
-    }
-  }
-  
-  .starwars {
+@keyframes starwars_mobile {
+0% {
+    transform:	perspective(1600px) rotateX(50deg) translateY(1000px) ;
+    transform-origin:	center center 0px;
+}
+95% {
+    transform:	perspective(1600px) rotateX(50deg) translateY(-4000px) ;
+    transform-origin:	center center 0px;
+}
+100% {
+    transform:	none;
+}
+}
+
+.starwars {
+height: 500px;
+animation: starwars_web;
+animation-duration: 10s;
+animation-timing-function: linear;
+}
+
+@media only screen and (max-width: 400px) {
+.starwars {
     height: 500px;
-    animation: starwars_web;
+    /* width: 110%; */
+    animation: starwars_mobile;
     animation-duration: 10s;
     animation-timing-function: linear;
-  }
-  
-  @media only screen and (max-width: 400px) {
-    .starwars {
-      height: 500px;
-      /* width: 110%; */
-      animation: starwars_mobile;
-      animation-duration: 10s;
-      animation-timing-function: linear;
-    }
-  }
+}
+}
+
+/* for Showing QR */
+.show_qr_off {
+    display: none;
+}
+.show_qr_on {
+    display: block;
+}
+
+/* for Showing Links */
+.show_links_off {
+    display: none;
+}
+.show_links_on {
+    display: block;
+}
+
   
 @media print {
     /* remove any screen only styles, for example link underline */
@@ -156,7 +178,20 @@ body {
         margin-left: -50px;
     }
 
+    .print_space {
+        display: block;
+    }
+    
     .menu-option-button {
         display: none;
     }
+
+    .show_qr_on {
+        display: none;
+    }
+
+    .show_links_on {
+        display: none;
+    }
+    
   }

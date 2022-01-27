@@ -16,15 +16,6 @@ The tutorial was well done, and featured a package, "Code Swing", to help with t
 
 
 ## TODO
-
-
-- style on print
-- QR on print
+- style buttons
 - add some color
 - add some annimation
-
-- port "menu" from https://github.com/alpiepho/css-grid-resume-mine
-  - game
-  - starwars
-  - other links
-
